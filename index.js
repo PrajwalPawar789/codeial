@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const port = 8000;
 
+const db = require('./config/mongoose');
+app.use(express.urlencoded());
 //use express router 
 app.use('/', require('./routes'));
 

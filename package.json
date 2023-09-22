@@ -13,6 +13,7 @@
   "author": "prajwal pawar",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^7.5.2"
   }
 }
