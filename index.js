@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const port = 8000;
+const cookieParser = require('cookie-parser');
 
 const db = require('./config/mongoose');
 app.use(express.urlencoded());
+app.use(cookieParser());
 //use express router 
 app.use('/', require('./routes'));
 
