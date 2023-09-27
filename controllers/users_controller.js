@@ -40,6 +40,11 @@ module.exports.create = function (req, res) {
     });
 };
 
+module.exports.createSession = function (req, res) {
+  console.log("user signed in");
+  return res.redirect('/');
+};
+
 module.exports.posts = function (req, res) {
   res.end("<h1>Users Posts</h1>");
 };
