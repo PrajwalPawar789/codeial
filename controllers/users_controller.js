@@ -3,10 +3,20 @@ module.exports.profile = function (req, res) {
 };
 
 module.exports.signin = function (req, res) {
+
+  if(req.isAuthenticated()){
+    return res.redirect('./profile');
+  }
+
   return res.render("signin");
 };
 
 module.exports.signUp = function (req, res) {
+
+  if(req.isAuthenticated()){
+    return res.redirect('./profile');
+  }
+
   return res.render("signUp");
 };
 
@@ -40,10 +50,10 @@ module.exports.create = function (req, res) {
     });
 };
 
-module.exports.createSession = function (req, res) {
-  console.log("user signed in");
+// sign in and create a session for the user
+module.exports.createSession = function(req, res){
   return res.redirect('/');
-};
+}
 
 module.exports.posts = function (req, res) {
   res.end("<h1>Users Posts</h1>");
