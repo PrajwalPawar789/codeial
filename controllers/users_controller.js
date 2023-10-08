@@ -1,5 +1,5 @@
 module.exports.profile = function (req, res) {
-  res.end("<h1> from profile</h1>");
+  return res.render('profile');
 };
 
 module.exports.signin = function (req, res) {
@@ -58,3 +58,15 @@ module.exports.createSession = function(req, res){
 module.exports.posts = function (req, res) {
   res.end("<h1>Users Posts</h1>");
 };
+
+
+module.exports.signout = function (req, res) {
+  req.logout(function(err) {
+    if (err) {
+      // Handle any errors that occurred during the logout process
+      return next(err);
+    }
+    // Redirect or perform any other actions after successful logout
+    return res.redirect('/');
+  });
+}

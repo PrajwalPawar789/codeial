@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    <% if(locals.user) { %>
+        <a href="/users/signout">SignOut</a>
+        <%= user.name %>
+    <% } else { %>
+            <a href="/signin">signin</a>
+            <a href="/signup">signout</a>
+    <% } %>
+</body>
+</html>
