@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Profile</title>
+    <link rel="stylesheet" href="/css/user_profile.css">
 </head>
 <body>
     <% if(locals.user) { %>
@@ -11,5 +12,8 @@
             <a href="/signin">signin</a>
             <a href="/signup">signout</a>
     <% } %>
+    
+    <p><%= user.name %></p>
+    <p><%= user.email %></p>
 </body>
 </html>
