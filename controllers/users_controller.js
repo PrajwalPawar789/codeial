@@ -1,26 +1,25 @@
+const User = require("../models/Users");
+const Post = require("../models/post");
+
 module.exports.profile = function (req, res) {
-  return res.render('profile');
+  return res.render("profile");
 };
 
 module.exports.signin = function (req, res) {
-
-  if(req.isAuthenticated()){
-    return res.redirect('./profile');
+  if (req.isAuthenticated()) {
+    return res.redirect("./profile");
   }
 
   return res.render("signin");
 };
 
 module.exports.signUp = function (req, res) {
-
-  if(req.isAuthenticated()){
-    return res.redirect('./profile');
+  if (req.isAuthenticated()) {
+    return res.redirect("./profile");
   }
 
   return res.render("signUp");
 };
-
-const User = require("../models/Users");
 
 module.exports.create = function (req, res) {
   console.log(req.body);
@@ -51,22 +50,23 @@ module.exports.create = function (req, res) {
 };
 
 // sign in and create a session for the user
-module.exports.createSession = function(req, res){
-  return res.redirect('/');
-}
+module.exports.createSession = function (req, res) {
+  return res.redirect("/");
+};
 
 module.exports.posts = function (req, res) {
   res.end("<h1>Users Posts</h1>");
 };
 
 
+
 module.exports.signout = function (req, res) {
-  req.logout(function(err) {
+  req.logout(function (err) {
     if (err) {
       // Handle any errors that occurred during the logout process
       return next(err);
     }
     // Redirect or perform any other actions after successful logout
-    return res.redirect('/');
+    return res.redirect("/");
   });
-}
+};
