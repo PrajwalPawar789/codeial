@@ -30,6 +30,17 @@
             </li>
           </p>
 
+          <!--Comments On Post-->
+      <div class="post-comments">
+        <% if(locals.user){ %>
+          <form action="/comments/create" method="POST">
+            <input type="text" name="content" placeholder="to add comment type here...">
+            <input type="hidden" name="post" value="<%= post._id %>" >
+            <input type="submit" value="Add comment" />
+          </form>    
+        <% } %>
+      </div>
+
           <%} %>
         </ul>
       </div>
